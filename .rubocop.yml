@@ -14,6 +14,9 @@ ClassAndModuleChildren:
 SymbolArray:
   Enabled: false
 
+EmptyMethod:
+  Enabled: false
+
 AllCops:
   Exclude:
     - db/**/*
