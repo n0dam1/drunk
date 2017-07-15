@@ -1,0 +1,23 @@
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスにコメントを残さなくて良い
+Documentation:
+  Enabled: false
+
+# クラス内クラスはネストでも::でも良い
+ClassAndModuleChildren:
+  Enabled: false
+
+# %i[foo bar baz]でも[:foo, :bar, :baz]でも良い
+SymbolArray:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - tmp/**/*
+    - bin/**/*
+    - Rakefile
