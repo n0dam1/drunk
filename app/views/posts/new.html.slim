@@ -1,0 +1,6 @@
+= form_for @post do |f|
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: "form-control"
+  
+  = f.submit :post, class: "btn btn-primary"
