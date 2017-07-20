@@ -1,5 +1,22 @@
+div style=("width: 800px;")
+  #map style=("width: 800px; height: 400px;")
+
 = link_to "new", new_post_path
 
 - @posts.each do |post|
   p = post.content
   p = time_ago_in_words post.created_at
+
+javascript:
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 35,
+        "lng": 135,
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(15);
+  });
