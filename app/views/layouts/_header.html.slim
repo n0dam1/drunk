@@ -1,5 +1,7 @@
-header
-nav.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      a.navbar-brand[href="#"] Drunk
+header.navbar.navbar-default
+  .container
+    = link_to 'Drunk', "#", class: "navbar-brand"
+    nav
+      ul.nav.navbar-nav.navbar-right
+        - if logged_in?
+          li = link_to "Log out", session_path(current_user), method: :delete

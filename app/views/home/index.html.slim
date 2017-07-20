@@ -4,6 +4,6 @@ section
       h1.text-center Drunk
       p.text-center explain content
       p.text-center
-        a.btn.btn-primary Login
+        = link_to "Log in", new_session_path, class: "btn btn-primary"
       p.text-center
-        a.btn.btn-primary Signup
+        = link_to "Sign up", new_user_path, class: "btn btn-primary"
