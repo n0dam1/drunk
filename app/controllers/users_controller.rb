@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include Sessionable
+
   def index
     @users = User.all
   end
@@ -10,7 +12,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path
+      log_in @user
+      # TODO: flash message
+      redirect_to posts_path
     else
       render :new
     end
