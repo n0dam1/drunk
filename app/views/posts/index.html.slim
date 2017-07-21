@@ -7,6 +7,8 @@ div style=("width: 800px;")
   p = post.content
   p = time_ago_in_words post.created_at
 
+button onclick="getPosition();" 位置情報を取得する
+
 javascript:
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -20,3 +22,31 @@ javascript:
     handler.fitMapToBounds();
     handler.getMap().setZoom(15);
   });
+
+  // 現在地取得処理
+  function getPosition() {
+    // 現在地を取得
+    navigator.geolocation.getCurrentPosition(
+      // 取得成功した場合
+      function(position) {
+          alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
+      },
+      // 取得失敗した場合
+      function(error) {
+        switch(error.code) {
+          case 1:
+            alert("位置情報の利用が許可されていません");
+            break;
+          case 2: //POSITION_UNAVAILABLE
+            alert("現在位置が取得できませんでした");
+            break;
+          case 3:
+            alert("タイムアウトになりました");
+            break;
+          default:
+            alert("その他のエラー(エラーコード:"+error.code+")");
+            break;
+        }
+      }
+    );
+  }

@@ -8,6 +8,7 @@ end
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
+gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
