@@ -4,6 +4,5 @@ html
     = render 'layouts/head'
   body
     = render 'layouts/header'
-    .container
     = yield
     = debug params if Rails.env.development?

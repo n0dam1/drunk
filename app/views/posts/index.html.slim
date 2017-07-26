@@ -1,17 +1,20 @@
-div style=("width: 800px;")
-  #map style=("width: 800px; height: 400px;")
+.container-fluid
+  .row
+    .col-xs-12.col-sm-8
+      #map
+      button onclick="getPosition();" 位置情報を取得する
 
-= link_to "new", new_post_path
-
-- @posts.each do |post|
-  p = post.content
-  p = time_ago_in_words post.created_at
-
-button onclick="getPosition();" 位置情報を取得する
+    .col-xs-12.col-sm-4
+      = link_to "new", new_post_path
+      .posts
+        - @posts.each do |post|
+          .post
+            p = post.content
+            p = time_ago_in_words post.created_at
 
 javascript:
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {}, internal: { id: 'map'}}, function(){
     markers = handler.addMarkers([
       {
         "lat": 35,
