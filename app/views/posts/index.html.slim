@@ -9,6 +9,7 @@
       .posts
         - @posts.each do |post|
           .post
+            p = post.user.name
             p = post.content
             p = time_ago_in_words post.created_at
 
