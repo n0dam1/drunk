@@ -7,6 +7,7 @@ end
 
 gem 'bcrypt'
 gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'geocoder'
 gem 'gmaps4rails'
