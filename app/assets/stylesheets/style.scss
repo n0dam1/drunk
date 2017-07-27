@@ -4,12 +4,14 @@
 }
 
 #map {
-  height: 600px;
+  height: 100vh;
   width: auto;
 }
 
 .posts {
   border: solid 1px #ccc;
+  height: 100vh;
+  overflow: auto;
 }
 
 .post {
