@@ -1,0 +1,5 @@
+= form_for post do |f|
+  .form-group
+    = f.text_area :content, class: "form-control", placeholder: "What are you doing?"
+  
+  = f.submit :post, class: "btn btn-primary btn-block"

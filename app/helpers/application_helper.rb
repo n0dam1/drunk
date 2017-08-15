@@ -6,4 +6,8 @@ module ApplicationHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def attach_atmark(str)
+    '@' + str
+  end
 end

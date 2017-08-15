@@ -5,13 +5,15 @@
       button onclick="getPosition();" 位置情報を取得する
 
     .col-xs-12.col-sm-4
-      = link_to "new", new_post_path
+      = render partial: 'posts/form', locals: { post: @post }
       .posts
         - @posts.each do |post|
           .post
-            p = post.user.name
-            p = post.content
-            p = time_ago_in_words post.created_at
+            .post-meta
+              span.post-user-name = attach_atmark post.user.name
+              span.post-date = time_ago_in_words post.created_at
+            .post-content
+              p = post.content
 
 javascript:
   handler = Gmaps.build('Google');
