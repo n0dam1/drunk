@@ -16,4 +16,16 @@
 
 .post {
   border-bottom: solid 1px #ccc;
+  margin: 10px;
+  p {
+    word-wrap: break-word;
+  }
+}
+
+.post-meta {
+  color: #888;
+}
+
+.post-date {
+  margin-left: 5px;
 }

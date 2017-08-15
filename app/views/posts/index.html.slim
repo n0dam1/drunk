@@ -9,9 +9,11 @@
       .posts
         - @posts.each do |post|
           .post
-            p = post.user.name
-            p = post.content
-            p = time_ago_in_words post.created_at
+            .post-meta
+              span.post-user-name = attach_atmark post.user.name
+              span.post-date = time_ago_in_words post.created_at
+            .post-content
+              p = post.content
 
 javascript:
   handler = Gmaps.build('Google');
